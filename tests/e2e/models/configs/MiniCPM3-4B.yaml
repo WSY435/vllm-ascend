@@ -1,0 +1,20 @@
+model_name: "openbmb/MiniCPM3-4B"
+hardware: "Atlas A2 Series"
+tasks:
+- name: "gsm8k"
+  metrics:
+  - name: "exact_match,strict-match"
+    value: 0.70
+  - name: "exact_match,flexible-extract"
+    value: 0.72
+- name: "ceval-valid"
+  metrics:
+  - name: "acc,none"
+    value: 0.68
+num_fewshot: 5
+max_model_len: 4096
+trust_remote_code: True
+dtype: "bfloat16"
+apply_chat_template: False
+fewshot_as_multiturn: False
+enforce_eager: True
